@@ -47,17 +47,7 @@
 		'reverse': reverse
 	};
 
-	// Some AMD build optimizers, like r.js, check for specific condition patterns
-	// like the following:
-	if (
-		typeof define == 'function' &&
-		typeof define.amd == 'object' &&
-		define.amd
-	) {
-		define(function() {
-			return esrever;
-		});
-	}	else if (freeExports && !freeExports.nodeType) {
+	if (freeExports && !freeExports.nodeType) {
 		if (freeModule) { // in Node.js, io.js, or RingoJS v0.8.0+
 			freeModule.exports = esrever;
 		} else { // in Narwhal or RingoJS v0.7.0-
